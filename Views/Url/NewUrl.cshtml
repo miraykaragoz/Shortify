@@ -1,0 +1,39 @@
+@model Url
+
+@{
+    ViewData["Title"] = "Kısa URL";
+}
+
+<style>
+    .copy-icon {
+        color: black; 
+        font-size: 1.5rem; 
+        cursor: pointer;
+        margin-left: 10px; 
+    }
+</style>
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div>
+        <h2 class="title mb-5">Kısa URL Oluşturuldu!</h2>
+        <p class="short-url-text">
+            Kısa URL'niz:
+            <a target="_blank" class="short-url-link" id="shortUrl" href="@ViewBag.FullShortUrl">https://shortify/@ViewBag.ShortUrl</a>
+            <button class="btn btn-link" id="copyButton" title="Kopyala">
+                <i class="fas fa-copy copy-icon"></i> 
+            </button>
+        </p>
+        <hr class="my-4">
+    </div>
+</div>
+
+<script>
+    document.getElementById('copyButton').addEventListener('click', function() {
+        const shortUrl = document.getElementById('shortUrl').href;
+        navigator.clipboard.writeText(shortUrl).then(function() {
+            alert('Kısa URL kopyalandı');
+        }, function(err) {
+            console.error('Kopyalama hatası: ', err);
+        });
+    });
+</script>
