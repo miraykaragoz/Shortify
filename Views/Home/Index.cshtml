@@ -1,0 +1,46 @@
+﻿@model Url
+
+@{
+    ViewData["Title"] = "URL Kısalt";
+}
+
+<div class="content">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="row mb-5">
+                    <div class="col-md-4 mr-auto">
+                        <h3 class="thin-heading mb-4">Kısa Linkler</h3>
+                        <p>
+                            Kolayca paylaş, hızlıca eriş! Shortify ile uzun linklerden kurtul, kısa URL’ler oluştur.
+                        </p>
+                    </div>
+                    <div class="col-md-6 ml-auto">
+                        <h3 class="thin-heading mb-4">Sadece Bir Tık!</h3>
+                        <p>
+                            Shortify ile uzun linkleri kısaltmak için sadece bir tık yeter; kısa linkini hızlıca paylaş ve zaman kazan!
+                        </p>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <h3 class="thin-heading mb-4">Dönüştür</h3>
+                        <form class="mb-5" action="/Url/Urlshortener" method="post" autocomplete="off">
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <input type="url" class="form-control" asp-for="OriginalUrl" cols="30" rows="2" placeholder="https://www.example.com"></input>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <input type="submit" value="Sihirli Dokunuş" class="btn btn-primary rounded-0 py-2 px-4">
+                                    <span class="Dönüştür"></span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
